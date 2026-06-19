@@ -1,0 +1,30 @@
+# ============================================================
+# AI Interview Simulator — Requirements
+# Python 3.11+
+# ============================================================
+
+# ---- LANGCHAIN CORE ----
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-google-genai>=2.0.0
+
+# ---- LANGGRAPH ----
+langgraph>=0.2.0
+
+# ---- LANGSMITH (otomatis ter-include via langchain) ----
+langsmith>=0.1.0
+
+# ---- GOOGLE GEMINI ----
+google-generativeai>=0.8.0
+
+# ---- STREAMLIT UI ----
+streamlit>=1.40.0
+
+# ---- PYDANTIC (untuk structured output) ----
+pydantic>=2.0.0
+
+# ---- ENVIRONMENT VARIABLES ----
+python-dotenv>=1.0.0
+
+# ---- UTILITIES ----
+typing-extensions>=4.8.0

@@ -1,0 +1,45 @@
+# .gitignore untuk AI Interview Simulator
+
+# ---- Environment & Secrets ----
+.env
+*.env
+!.env.example
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- Virtual Environment ----
+venv/
+env/
+.venv/
+ENV/
+
+# ---- IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Streamlit ----
+.streamlit/secrets.toml
+
+# ---- LangSmith / LangChain Cache ----
+.langchain.db
+langchain_cache/
+
+# ---- Logs ----
+*.log
+logs/
