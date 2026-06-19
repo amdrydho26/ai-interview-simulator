@@ -36,50 +36,50 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    AI Interview Simulator                      │
-│                                                               │
+│                    AI Interview Simulator                   │
+│                                                             │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │                  STREAMLIT UI (app.py)                │   │
-│  │  ┌────────────┐  ┌─────────────────┐  ┌──────────┐  │   │
-│  │  │  Setup     │  │   Interview     │  │ Results  │  │   │
-│  │  │  Page      │  │   Page          │  │ Page     │  │   │
-│  │  └────────────┘  └─────────────────┘  └──────────┘  │   │
+│  │                  STREAMLIT UI (app.py)               │   │
+│  │  ┌────────────┐  ┌─────────────────┐  ┌──────────┐   │   │
+│  │  │  Setup     │  │   Interview     │  │ Results  │   │   │
+│  │  │  Page      │  │   Page          │  │ Page     │   │   │
+│  │  └────────────┘  └─────────────────┘  └──────────┘   │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                           │                                   │
+│                           │                                 │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │               LANGGRAPH WORKFLOW (graph.py)           │   │
-│  │                                                       │   │
+│  │               LANGGRAPH WORKFLOW (graph.py)          │   │
+│  │                                                      │   │
 │  │   START → generate_question → [user_input]           │   │
 │  │          → evaluate_answer → check_count             │   │
 │  │              ├─ < 5 → generate_question (loop)       │   │
 │  │              └─ = 5 → generate_final_report → END    │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                           │                                   │
+│                           │                                 │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │              LANGCHAIN CHAINS (prompts.py)            │   │
-│  │                                                       │   │
-│  │  ┌──────────────────────────────────────────────┐   │   │
-│  │  │  INTERVIEW_PROMPT | LLM | InterviewQuestion  │   │   │
-│  │  │  EVALUATION_PROMPT | LLM | AnswerEvaluation  │   │   │
-│  │  │  FINAL_REPORT_PROMPT | LLM | FinalReport     │   │   │
-│  │  └──────────────────────────────────────────────┘   │   │
+│  │              LANGCHAIN CHAINS (prompts.py)           │   │
+│  │                                                      │   │
+│  │  ┌──────────────────────────────────────────────┐    │   │
+│  │  │  INTERVIEW_PROMPT | LLM | InterviewQuestion  │    │   │
+│  │  │  EVALUATION_PROMPT | LLM | AnswerEvaluation  │    │   │
+│  │  │  FINAL_REPORT_PROMPT | LLM | FinalReport     │    │   │
+│  │  └──────────────────────────────────────────────┘    │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                           │                                   │
+│                           │                                 │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │              PYDANTIC MODELS (models.py)              │   │
-│  │                                                       │   │
+│  │              PYDANTIC MODELS (models.py)             │   │
+│  │                                                      │   │
 │  │   InterviewQuestion  AnswerEvaluation  FinalReport   │   │
 │  │   SoftSkillScores    QAPair                          │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                           │                                   │
+│                           │                                 │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │              GOOGLE GEMINI API                        │   │
+│  │              GOOGLE GEMINI API                       │   │
 │  │         (ChatGoogleGenerativeAI — gemini-2.5-flash)  │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                           │                                   │
+│                           │                                 │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │              LANGSMITH TRACING                        │   │
-│  │         (Monitoring & Observability Dashboard)        │   │
+│  │              LANGSMITH TRACING                       │   │
+│  │         (Monitoring & Observability Dashboard)       │   │
 │  └──────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -238,7 +238,7 @@ ai-interview-simulator/
 ### Langkah 1: Clone Repository
 
 ```bash
-git clone https://github.com/username/ai-interview-simulator.git
+git clone https://github.com/amdrydho26/ai-interview-simulator.git
 cd ai-interview-simulator
 ```
 
@@ -287,6 +287,10 @@ LANGCHAIN_PROJECT=AI-Interview-Simulator
 
 ## 🚀 Menjalankan Aplikasi
 
+```bash
+python -m streamlit run app.py
+```
+atau
 ```bash
 streamlit run app.py
 ```
@@ -362,14 +366,25 @@ Session Run
 
 ## 📸 Screenshots
 
-> Screenshots akan tersedia setelah menjalankan aplikasi.
+### Halaman Pemilihan Posisi
 
-| Halaman | Deskripsi |
-|---------|-----------|
-| `screenshots/01_setup.png` | Halaman pemilihan posisi |
-| `screenshots/02_interview.png` | Halaman sesi interview aktif |
-| `screenshots/03_results.png` | Halaman laporan akhir |
-| `screenshots/04_langsmith.png` | LangSmith tracing dashboard |
+![Setup](screenshots/01_setup.png)
+
+### Sesi Interview
+
+![Interview](screenshots/02_interview.png)
+
+### Hasil Evaluasi
+
+![Result 1](screenshots/03_results-1.png)
+
+![Result 2](screenshots/03_results-2.png)
+
+![Result 3](screenshots/03_results-3.png)
+
+### LangSmith Dashboard
+
+![LangSmith](screenshots/04_langsmith.png)
 
 ---
 
@@ -385,8 +400,3 @@ MIT License — Lihat file `LICENSE` untuk detail.
 
 ---
 
-<div align="center">
-
-**Dibuat dengan ❤️ menggunakan LangChain, LangGraph, LangSmith & Google Gemini**
-
-</div>
